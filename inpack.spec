@@ -1,6 +1,6 @@
 [project]
 name = golang
-version = 1.9.1
+version = 1.9.2
 vendor = golang.org
 homepage = https://golang.org/
 groups = dev/sys-runtime
