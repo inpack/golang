@@ -33,6 +33,11 @@ if [ -f "README" ]; then
     cp -rp README {{.buildroot}}/
 fi
 
+cd {{.inpack__pack_dir}}
+mkdir -p {{.buildroot}}/misc
+install misc/inner-init.sh {{.buildroot}}/inner-init.sh
+install misc/profile.d_golang.sh {{.buildroot}}/misc/profile.d_golang.sh
+
 cd {{.inpack__pack_dir}}/deps
 rm -rf go
 
