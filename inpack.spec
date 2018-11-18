@@ -1,6 +1,6 @@
 [project]
 name = golang
-version = 1.9.6
+version = 1.11
 vendor = golang.org
 homepage = https://golang.org/
 groups = dev/sys-runtime
@@ -32,6 +32,15 @@ fi
 if [ -f "README" ]; then
     cp -rp README {{.buildroot}}/
 fi
+
+files=`find {{.buildroot}}/bin/ -executable -type f |xargs`
+for file in $files; do
+    strip -s ${file}
+done
+files=`find {{.buildroot}}/pkg/tool/linux_amd64/ -executable -type f |xargs`
+for file in $files; do
+    strip -s ${file}
+done
 
 cd {{.inpack__pack_dir}}
 mkdir -p {{.buildroot}}/misc
