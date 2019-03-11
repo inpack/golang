@@ -7,7 +7,6 @@ groups = dev/sys-runtime
 description = open source programming language that makes it easy to build simple, reliable, and efficient software.
 
 %build
-PREFIX="{{.project__prefix}}"
 
 cd {{.inpack__pack_dir}}/deps
 
