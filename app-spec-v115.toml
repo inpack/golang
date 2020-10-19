@@ -1,0 +1,39 @@
+kind = "AppSpec"
+roles = [101, 100]
+type_tags = ["runtime"]
+
+[meta]
+  id = "sysinner-go115"
+  name = "Golang 1.15"
+  version = "1.0"
+  subtitle = "Golang 1.15 运行环境"
+
+[[packages]]
+  name = "go115"
+  version = "1.15"
+
+[[executors]]
+  name = "sysinner-go115-main"
+  exec_start = """
+{{.inpack_prefix_go115}}/inner-init.sh
+"""
+  priority = 2
+
+  [executors.plan]
+    on_boot = true
+
+[exp_res]
+  cpu_min = 10
+  mem_min = 128
+  vol_min = 1
+
+[exp_deploy]
+  rep_min = 1
+  rep_max = 128
+  sys_state = 2
+  network_mode = 1
+
+[[urls]]
+  name = "gdoc"
+  url = "https://www.sysinner.cn/gdoc/view/app-guide/go/v115.md"
+
