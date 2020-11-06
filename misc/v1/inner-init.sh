@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 set -e
 
@@ -11,6 +11,6 @@ if [ ! -d $GOPATH ]; then
   mkdir -p $GOPATH
 fi
 
-/home/action/.sysinner/inagent confrender --in ${GOROOT}/misc/profile.d_golang.sh --out /home/action/local/profile.d/golang.sh --var__inpack_prefix_go115 ${GOROOT}
+/home/action/.sysinner/inagent confrender --in ${GOROOT}/misc/profile.d_golang.sh --out /home/action/local/profile.d/golang.sh --var__inpack_prefix_golang ${GOROOT}
 source /home/action/local/profile.d/golang.sh
 

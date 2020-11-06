@@ -3,17 +3,17 @@ roles = [101, 100]
 type_tags = ["runtime"]
 
 [meta]
-  id = "sysinner-go115"
-  name = "Golang 1.15"
+  id = "sysinner-go1"
+  name = "Golang 1"
   version = "1.0"
-  subtitle = "Golang 1.15.x 运行环境"
+  subtitle = "Golang 1.x 运行环境"
 
 [[packages]]
   name = "golang"
-  version = "1.15"
+  version = "1"
 
 [[executors]]
-  name = "sysinner-go115-main"
+  name = "sysinner-go1-main"
   exec_start = """
 {{.inpack_prefix_golang}}/inner-init.sh
 """

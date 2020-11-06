@@ -1,5 +1,5 @@
 [project]
-name = "go115"
+name = "golang"
 version = "1.15.3"
 vendor = "golang.org"
 homepage = "https://golang.org/"
@@ -48,9 +48,9 @@ for file in $files; do
 done
 
 cd {{.inpack__pack_dir}}
-mkdir -p {{.buildroot}}/misc/v115
-install misc/v115/inner-init.sh {{.buildroot}}/inner-init.sh
-install misc/v115/profile.d_golang.sh {{.buildroot}}/misc/profile.d_golang.sh
+mkdir -p {{.buildroot}}/misc/v1
+install misc/v1/inner-init.sh {{.buildroot}}/inner-init.sh
+install misc/v1/profile.d_golang.sh {{.buildroot}}/misc/profile.d_golang.sh
 cd {{.inpack__pack_dir}}/deps
 rm -rf go
 """
