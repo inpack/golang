@@ -1,6 +1,6 @@
 [project]
 name = "golang"
-version = "1.16"
+version = "1.17"
 vendor = "golang.org"
 homepage = "https://golang.org/"
 description = "open source programming language that makes it easy to build simple, reliable, and efficient software."
@@ -37,15 +37,15 @@ if [ -f "README" ]; then
     cp -rp README {{.buildroot}}/
 fi
 
-files=`find {{.buildroot}}/bin/ -executable -type f |xargs`
-for file in $files; do
-    strip -s ${file}
-done
+# files=`find {{.buildroot}}/bin/ -executable -type f |xargs`
+# for file in $files; do
+#     strip -s ${file}
+# done
 
-files=`find {{.buildroot}}/pkg/tool/linux_amd64/ -executable -type f |xargs`
-for file in $files; do
-    strip -s ${file}
-done
+# files=`find {{.buildroot}}/pkg/tool/linux_amd64/ -executable -type f |xargs`
+# for file in $files; do
+#     strip -s ${file}
+# done
 
 cd {{.inpack__pack_dir}}
 mkdir -p {{.buildroot}}/misc/v1
